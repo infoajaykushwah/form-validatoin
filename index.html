@@ -51,31 +51,31 @@
             <input type="submit">
         </form>
     </div>
+    
     <script>
         let username = document.getElementById("username");
-        let password = decument.getElementById("password");
-        let flag = 1;
-
-        function validateForm(){
-            if(username.value == ""){
+        let password = document.getElementById("password");
+    
+        function validateForm() {
+            let flag = true; // Set the initial flag value to true
+    
+            if (username.value === "") {
                 document.getElementById("userError").innerHTML = "User name is empty";
-                flag = 0;
-            }else if(username.value.length<3){
-                document.getElementById("userError").innerHTML = "user name require min 3 char";
-                flag = 0;
-            }
-            else{
+                flag = false;
+            } else if (username.value.length < 3) {
+                document.getElementById("userError").innerHTML = "User name requires a minimum of 3 characters";
+                flag = false;
+            } else {
                 document.getElementById("userError").innerHTML = "";
-                flag = 1;
-            } 
-        
-            if(password.value == ""){
-                document.getElementById("passError").innerHTML = "Password is empty";
-                flag = 0;
-            }else{
-                document.getElementById("passError").innerHTML = "";
-                flag = 1;
             }
+    
+            if (password.value === "") {
+                document.getElementById("passError").innerHTML = "Password is empty";
+                flag = false;
+            } else {
+                document.getElementById("passError").innerHTML = "";
+            }
+     
 
             if(flag){
                 return true;
